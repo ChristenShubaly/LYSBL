@@ -1,0 +1,969 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  overflow-y: scroll;
+}
+
+/* https://coolors.co/0d1821-736372-a18276-f0f4ef-b5fed9 */
+
+
+/* <a href="https://www.freepik.com/free-photo/black-textured-brick-wall-background_19140632.htm#page=2&query=free%20commercial%20use%20black%20brick&position=3&from_view=search&track=ais">Image by rawpixel.com</a> on Freepik */
+header {
+    background: #0D1821;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    height: 17em;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    color: #F0F4EF;
+}
+/* hero carousel*/
+.carousel {
+
+  width: calc(100vw -1px);
+  height: 100vh;
+  position: relative;
+}
+
+.carousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, .5);
+  cursor: pointer;
+  border-radius: .25rem;
+  padding: 0 .5rem;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+
+.logo-small {
+    margin: 0.5em;
+    width: 1.5em;
+    height: auto;
+}
+
+.logo {
+    margin: 2em;
+    width: 50em;
+    height: auto;
+   
+}
+
+/* navbar */
+a {
+    text-decoration: none;
+}
+a.tel{
+  color: #000;
+}
+
+.nav {
+    height: 7em;
+    max-width: 100vw;
+    background-color: #0d1821;
+    position: relative;
+  }
+  
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: flex;
+  max-width: 100vh;
+  float: right;
+  font-size: 18px;
+  list-style-type: none;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 1em;
+  text-decoration: none;
+  animation: slowColorChange 2s ease infinite;
+}
+
+
+.nav > .nav-links > li > a:active {
+  animation: none; 
+  color: cyan;
+}
+
+.nav > .nav-links li {
+  padding: 1.5em 1.5em 0 1.5em;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+main {
+  width: 65%;
+  margin: auto auto;
+}
+
+section {
+  margin: 5em;
+}
+
+article {
+  margin: 3.5em 0 3.5em 0;
+}
+
+
+
+/* products */
+
+article h1 {
+  color: #fff;
+  background-color: #0d1821;
+  padding: 0.375em 0.375em 0.375em 1em;
+  margin-bottom: 1.2em;
+  text-align: left;
+}
+
+.item {
+  margin: 1em;
+}
+
+.addon {
+  margin-top: 0.5em;
+}
+
+.skincare-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 20em, 20em, 20em);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.nail-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 20em, 20em, 20em, 20em);
+}
+
+.lash-items {
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 25em, 25em);
+}
+.brow-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 20em, 20em);
+}
+
+.wax-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(9, 20em, 20em);
+}
+
+.makeup-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 20em, 20em, 20em, 20em);
+}
+
+.gift-forms-container .gc-cash-container select, .gift-forms-container .gc-services-container select{
+  padding: .2em;
+  font-family: 'Sofia Sans Extra Condensed', sans-serif;
+  font-size: 14pt;
+  margin: 1em 0 1em 0;
+}
+
+.gift-forms-container .gc-cash-container select option, .gift-forms-container .gc-services-container select option{
+  padding: .2em;
+  font-family: 'Sofia Sans Extra Condensed', sans-serif;
+  font-size: 14pt;
+}
+#gc-type > *{
+  margin: 0 0.5em 0 0.5em
+}
+#gc-type > label {
+  font-size: 23pt;
+}
+
+
+ button#cardSub {
+  padding: 0.6em;
+  background-color: #efefef;
+  border: none;
+}
+
+
+
+footer {
+  background-color: #0d1821;
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, auto );
+  grid-template-rows: repeat(2, auto);
+  
+}
+
+.map {
+  grid-area: 1 / 1 / 2 / 4; 
+  width: 100%;
+  height: 24em;
+}
+.hours ul {
+  list-style: none;
+}
+
+.hours ul li {
+  margin: 1em 0 1em 0;
+}
+
+.info {
+  grid-area: 2 / 1 / 3 / 2;
+  padding: 4em;
+}
+
+.hours, .local, .contact-form{
+  margin: 2.5em;
+}
+
+
+.local {
+  margin-top: 11em;
+}
+
+
+.soci {
+  height: auto;
+  width: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 0.5em;
+}
+
+
+
+#contactForm {
+  grid-area: 2 / 2 / 3 / 3; 
+  padding: 4em;
+  width: max-content;
+}
+
+.sex > * {
+  margin: 0.2em;
+}
+
+.contact-form button {
+  padding: 0.5em;
+  background-color: #fff;
+  float: right;
+
+}
+
+
+fieldset {
+  border: none;
+}
+div fieldset {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+fieldset label {
+  width: 6em;
+}
+
+.local {
+  grid-area: 2 / 3 / 3 / 4; 
+}
+
+.top {
+  z-index: 2;
+  bottom: 3em;
+  right: 3em;
+  position: fixed;
+  width: 4em;
+  height: 4em;
+  background-color: cyan;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top p a {
+  color: #0D1821;
+}
+
+
+
+  /* nav bar break point ###################################################################################*/
+@media (max-width:600px) {
+  header {
+    background: #0D1821;
+    display: flex;
+    flex-direction: column;
+    height: 20em;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    color: #F0F4EF;
+}
+
+
+  .nav > .nav-btn {
+    z-index: 3;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+    color: #F0F4EF;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: #0d1821;
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    /* border-top: 2px solid #eee; */
+  }
+  .nav > .nav-links {
+    z-index: 4;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    max-width: 100vw;
+    background-color: #0d1821;
+    height: 10em;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    right: 0px;
+  }
+  .nav-links li a {
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    color: #fff;
+    font-size: 23pt;
+}
+  .nav > .nav-links > a {
+    display: block;
+    max-width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+
+}
+
+/* gift card section */
+.gift-forms-container {
+  background: #0d1821;
+  width: 40em;
+  color: #efefef;
+  text-align: left;
+  padding: 4em;
+  border-radius: 1em;
+}
+
+.gift-forms-container > * {
+  padding: 0.2em;
+} 
+
+
+
+
+.local > *{
+  margin-bottom: 1em;
+}
+
+/* animations */
+
+@keyframes slowColorChange {
+  0% {
+    color: #efefef; /* Initial text color */
+  }
+  100% {
+    color: cyan; /* Text color on hover */
+  }
+}
+@media (min-width:1000px){
+  .nav > .nav-links > li > a:hover {
+    /* animation: none;  */
+    color: cyan; 
+    transition: color 1s ease;
+  }
+}
+
+/* tablet ##################################################################################################################### */
+
+@media (max-width:820px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav > .nav-links {
+    float: right;
+    display: flex;
+    max-width: auto;
+    /* margin-right: 5em; */
+    font-size: 16pt;
+    list-style-type: none;
+  }
+  
+  .nav > .nav-links > a {
+    padding: 0;
+    padding: 1em;
+    text-decoration: none;
+    color: #efefef;
+  }
+  
+  .nav > .nav-links li {
+    padding: 0.5em;
+  }
+
+h1 {
+  font-size: 50pt;
+}
+
+h2 {
+  font-size: 20pt;
+}
+
+p {
+  font-size: 18pt;
+}
+
+.logo {
+    width: 35em;
+    height: auto;
+    margin: 0;
+}
+.nav {
+    height: 7em;
+    text-align: center;
+}
+
+.carousel {
+
+  width: calc(100vw -100px);
+  height: 100vh;
+  position: relative;
+}
+
+.carousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.slide > img {
+  display: block;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, .5);
+  cursor: pointer;
+  border-radius: .25rem;
+  padding: 0 .5rem;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.carousel-button:focus {
+  outline: 1px solid black;
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+
+main {
+  /* text-align: center; */
+  width: 85%;
+  /* margin: auto auto; */
+}
+
+/* services */
+article h1 {
+  color: #fff;
+  background-color: #0d1821;
+  padding: 0.375em 0.375em 0.375em 1em;
+  margin-bottom: 1.2em;
+  text-align: left;
+}
+
+
+
+.item {
+  margin: 1em 0 1em 0;
+}
+
+
+.addon {
+  margin-top: 0.5em;
+}
+
+.skincare-items, .nail-items, .lash-items, .brow-items, .wax-items, .makeup-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail {
+  font-size: 15pt;
+}
+
+section {
+  margin: 2em;
+}
+.gift-forms-container {
+  padding: 2em;
+  width: 30em;
+  margin-left: -3em;
+}
+
+.gift-forms-container > * {
+  padding: 0.3em;
+}
+.gc-cash, .gc-services {
+  width: 13em;
+}
+
+footer {
+  background-color: #0d1821;
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+}
+
+footer h2 {
+  font-size: 30pt;
+}
+
+.map {
+  grid-area: 1 / 1 / 2 / 4;
+}
+
+.info {
+  grid-area: 2 / 1 / 3 / 2;
+  padding-left: 3em;
+  margin-left: -2.5em;
+  width: 8em;
+}
+
+.info ul li{
+  width: 8em;
+}
+
+.contact-form {
+  grid-area: 2 / 2 / 3 / 3;
+  padding: 0;
+  
+}
+
+#contactForm {
+  padding: 4em 0 4em 0;
+}
+
+.local {
+  grid-area: 3 / 1 / 4 / 2;
+  margin: 3em;
+  margin-right: 0em;
+  width: 15em;
+}
+
+.local p {
+  font-size: 23pt;
+}
+
+.soci {
+  width: 1em;
+}
+
+div fieldset {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+fieldset label {
+  width: 6em;
+}
+
+fieldset input {
+  width: 8em;
+}
+
+.sex > * {
+  margin: 0.01em;
+}
+
+.contact-form button {
+  padding: 0;
+  background-color: #fff;
+  float: none;
+  margin-right: 0em;
+
+}
+
+textarea {
+  width: 8em;
+}
+}
+
+/* mobile ##############################################################################################################*/
+@media (max-width: 430px) {
+  body {
+    overflow-x: hidden;
+  }
+  header {
+      height: 12em;
+  }
+
+  h1 {
+    font-size: 30pt;
+  }
+
+  h2 {
+    font-size: 20pt;
+  }
+  
+  p {
+    font-size: 18pt;
+  }
+
+  .logo {
+      width: 20em;
+      height: auto;
+  }
+  .nav {
+      height: 3.5em;
+  }
+
+  .carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+  }
+  .carousel-button.prev {
+    left: 2rem;
+  }
+  
+  .carousel-button.next {
+    right: 2rem;
+  }
+  
+
+  main {
+    /* text-align: center; */
+    width: 85%;
+    margin: auto auto;
+  }
+
+  /* services */
+  article h1 {
+    color: #fff;
+    background-color: #0d1821;
+    padding: 0.375em 0.375em 0.375em 1em;
+    margin-bottom: 1.2em;
+    text-align: left;
+  }
+
+  .item {
+    margin: 1em 0 1em 0;
+  }
+
+  .addon {
+    margin-top: 0.5em;
+  }
+
+  .skincare-items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, auto auto auto auto auto auto);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .nail-items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, auto auto auto auto);
+  }
+
+  .lash-items {
+    display: grid; 
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, auto auto auto);
+  }
+  .brow-items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, auto auto auto auto);
+  }
+
+  .wax-items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(18, auto);
+  }
+
+  .makeup-items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, auto);
+  }
+
+
+  section {
+    margin: 2.2em;
+  }
+  .gift-forms-container {
+    padding: 2em;
+    width: 20em;
+    margin-left: -2.5em;
+
+  }
+
+  .gift-forms-container h1 {
+    font-size: 30pt;
+    
+  }
+  .gift-forms-container > * {
+    padding: 0;
+  }
+  .gc-cash, .gc-services {
+    width: 13em;
+  }
+  #gc-type > label {
+    font-size: 18pt;
+  }
+
+  footer {
+    background-color: #0d1821;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .info ul, .info ul li{
+    width: 8em;
+    font-size: 18pt;
+  }
+
+  .info {
+    width: 8em;
+    padding: 0;
+    margin: 3em;
+    margin-left: 3em;
+  }
+  .contact-form {
+    margin: auto auto;
+    grid-area: 2 / 3 / 3 / 5; 
+    padding: 0;
+  }
+
+  #contactForm {
+    width: 17em;
+    margin: 4em;
+  }
+  .local {
+    font-size: 18pt;
+    margin-left: 2em;
+    width: 11em;
+  }
+
+  address {
+    font-size: 18pt;
+  }
+
+  div fieldset {
+    
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    width: 15em;
+    margin-bottom: 3em;
+  }
+
+  /* footer form div  */
+  
+  #contactForm fieldset label {
+    font-size: 18pt;
+    width: 6em;
+  }
+
+  fieldset input {
+    width: 8em;
+  }
+  
+  .sex > div {
+    width: 8em;
+    height: 3em;
+    margin: 0.2em;
+    font-size: 16pt;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .sex > div label {
+    padding: 0.5em;
+  }
+
+  .sex > div input {
+    width: 1em;
+    
+  }
+  .soci {
+    width: 1em;
+    margin: 0;
+  }
+  
+  .contact-form button {
+    padding: 0.5em;
+    background-color: #fff;
+    float: right;
+    margin-right: 4.5em;
+  
+  }
+
+  textarea {
+    width: 8em;
+  }
+  
+}
+

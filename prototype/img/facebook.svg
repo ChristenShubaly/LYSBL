@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="512px"
+   height="512px"
+   style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+   id="svg1"
+   sodipodi:docname="facebook.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="1.5878906"
+     inkscape:cx="256"
+     inkscape:cy="256"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <g
+     id="g1"
+     style="fill:#ffffff">
+    <path
+       style="opacity:0.992;fill:#ffffff"
+       fill="#000000"
+       d="M 37.5,14.5 C 182.5,14.3333 327.5,14.5 472.5,15C 484.469,16.9703 491.969,23.8036 495,35.5C 495.667,182.167 495.667,328.833 495,475.5C 491.833,485.333 485.333,491.833 475.5,495C 432.501,495.5 389.501,495.667 346.5,495.5C 346.5,433.5 346.5,371.5 346.5,309.5C 367.177,309.833 387.844,309.5 408.5,308.5C 412.073,284.916 415.073,261.25 417.5,237.5C 393.833,237.5 370.167,237.5 346.5,237.5C 346.333,217.831 346.5,198.164 347,178.5C 349.167,165.667 356.667,158.167 369.5,156C 386.472,154.684 403.472,154.184 420.5,154.5C 420.827,133.258 420.494,112.091 419.5,91C 396.881,88.7472 374.215,88.0805 351.5,89C 304.886,95.2811 278.719,121.781 273,168.5C 272.5,191.498 272.333,214.498 272.5,237.5C 251.5,237.5 230.5,237.5 209.5,237.5C 209.5,261.5 209.5,285.5 209.5,309.5C 230.5,309.5 251.5,309.5 272.5,309.5C 272.5,371.5 272.5,433.5 272.5,495.5C 193.499,495.667 114.499,495.5 35.5,495C 25.8686,492.704 19.3686,486.871 16,477.5C 14.3411,330.868 14.0077,184.201 15,37.5C 18.0151,25.3193 25.5151,17.6526 37.5,14.5 Z"
+       id="path1" />
+  </g>
+</svg>
