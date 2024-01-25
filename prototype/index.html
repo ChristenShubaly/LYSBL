@@ -19,12 +19,19 @@
         <title>LYSBL</title>
 </head>
 <body>
+
+    <!-- sticky nav -->
+    
+
     <header id="top">
         <div id="logo-text">
             <img class="logo" src="img/lys_logo.jpg" alt="LYSBL Logo">
         </div>
     </header>
 
+    
+
+    <!-- normal nav -->
     <div class="nav" id="nav">
         <input type="checkbox" id="nav-check">
         <div class="nav-btn" id="navBtn">
@@ -35,12 +42,13 @@
         <div class="nav-links">
             <li><a href='index.html#home'>Home</a></li>
             <li><a href='index.html#services'>Services</a></li>
-            <li><a href='index.html#gift_cards'>Gift Cards</a></li>
+            <!-- <li><a href='index.html#gift_cards'>Gift Cards</a></li> -->
             <li><a href='index.html#contact'>Contact Us</a></li>
         </div>
-
-
     </div>
+
+    
+
     <aside aria-label="Love Your Self Beauty Lounge Images">
         <div class="carousel" data-carousel>
             <button class="carousel-button prev" data-carousel-button="prev">&#x219e;</button>
@@ -266,6 +274,10 @@
                         <p>Remove all unwanted arm hair from all arm areas.</p>
                     </div>
                     <div class="item">
+                        <h2>Underarm<b>30</b></h2>
+                        <p>Remove all unwanted hair from underarms</p>
+                    </div>
+                    <div class="item">
                         <h2>Half Arm <b>40</b></h2>
                         <p>Remove unwanted from lower arms.</p>
                     </div>
@@ -329,7 +341,7 @@
         </section>
         <section aria-details="Gift Cards" id="gift_cards" class="gift-cards">
             <!-- forms in carousel -->
-            <div class="gift-forms-container" id="gift_forms_container">
+            <!-- <div class="gift-forms-container" id="gift_forms_container">
                 <h1>Gift Cards</h1>
                 <form>
                     <div id="gc-type">
@@ -362,15 +374,15 @@
                             <option value="manicure">MANICURE - $45</option>
                             <option value="spa manicure">SPA MANICURE - $55</option>
                             <option value="no polish manicure">NO POLISH MANICURE - $40</option>
-                            <option value="shellac manicure">SHELLAC MANICURE - $50</option> <!-- needs additionals -->
+                            <option value="shellac manicure">SHELLAC MANICURE - $50</option> 
                             <option value="pedicure">PEDICURE - $65</option>
                             <option value="">SPA PEDICURE - $85</option>
                             <option value="shellac pedicure">SHELLAC PEDICURE - $75</option>
                             <option value="toe pedicure">TOE PEDICURE - $45</option>
-                            <option value="bio sculpture gel nails">BIO SCULPTURE GEL NAILS</option> <!-- needs additionals -->
+                            <option value="bio sculpture gel nails">BIO SCULPTURE GEL NAILS</option> 
                             <option value="lash tint">LASH TINT - $30</option>
                             <option value="lash lift + tint">LASH LIFT + TINT - $85</option>
-                            <option value="eyelashes extension">EYELASHES EXTENSION</option> <!-- needs additionals -->
+                            <option value="eyelashes extension">EYELASHES EXTENSION</option> 
                             <option value="brow shaping">BROW SHAPING - $25</option>
                             <option value="brow tint">BROW TINT - $30</option>
                             <option value="brow tint and shaping">BROW TINT AND SHAPING - $50</option>
@@ -400,7 +412,7 @@
                         </select>
                     </div>
                     <button type="submit" id="cardSub">Check Out</button>
-                </form>
+                </form> -->
             </div>
         </section>
     </main>
@@ -423,7 +435,7 @@
             </div>
         </div>
 
-        <form action="" class="contact-form" id="contactForm">
+        <!-- <form action="" class="contact-form" id="contactForm">
             <h2>Contact Us</h2>
             <div>
                 <fieldset>
@@ -467,7 +479,7 @@
                 </fieldset>
             </div>
             <button type="submit">Send</button>
-        </form>
+        </form> -->
 
         <div class="local">
             <p>
@@ -498,10 +510,28 @@
     </footer>
 
     <div class="top">
-        <p><a href='index.html#top'>TOP</a></p>
+        <p><a href='#'>🛒</a></p>
     </div>
     
    <script>
+        //nav
+        window.addEventListener('scroll', function() {
+            // Calculate scroll percentage
+            const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        
+            // Example: Adjust z-index based on scroll percentage
+            const stickNav = document.getElementById('nav');
+            
+            if (scrollPercentage < 1) {
+                stickNav.style.zIndex = 1;
+                stickNav.style.position = 'relative'; // Change to relative position
+            } else {
+                stickNav.style.zIndex = 2;
+                stickNav.style.position = 'fixed'; // Change to fixed position
+                stickNav.style.top = '0';
+            }
+        });
+    
         const $gc_cash = document.getElementById('gc_cash')
         const $gc_services = document.getElementById('gc_services')
         const $gc_type = document.getElementById('gc-type')
@@ -512,23 +542,23 @@
         const $gcCashContainer = document.querySelector('.gc-cash-container')
         const $gcServicesContainer = document.querySelector('.gc-services-container')
 
-        if ($cash.checked) {
-            $gcCashContainer.style.display = 'block'
-            $gcServicesContainer.style.display = 'none'
-        } else {
-            $gcCashContainer.style.display = 'none'
-            $gcServicesContainer.style.display = 'block'
-        }
+        //if ($cash.checked) {
+        //    $gcCashContainer.style.display = 'block'
+        //    $gcServicesContainer.style.display = 'none'
+        //} else {
+        //    $gcCashContainer.style.display = 'none'
+        //    $gcServicesContainer.style.display = 'block'
+        //}
         
-        $gc_type.addEventListener('change', () => {
-            if ($cash.checked) {
-                $gcCashContainer.style.display = 'block'
-                $gcServicesContainer.style.display = 'none'
-            } else {
-                $gcCashContainer.style.display = 'none'
-                $gcServicesContainer.style.display = 'block'
-            }
-        })
+        //$gc_type.addEventListener('change', () => {
+        //    if ($cash.checked) {
+         //       $gcCashContainer.style.display = 'block'
+         //       $gcServicesContainer.style.display = 'none'
+         //   } else {
+        //        $gcCashContainer.style.display = 'none'
+         //       $gcServicesContainer.style.display = 'block'
+        //    }
+       // })
 
         //carousel
         const buttons = document.querySelectorAll("[data-carousel-button]");
@@ -576,7 +606,24 @@ function moveCarousel(button) {
         });
     });
 
-        
+
+    // email form
+    //document.getElementById("contactForm").addEventListener("submit", function (event) {
+    //    event.preventDefault();
+    //    sendEmail();
+    //});
+
+    function sendEmail() {
+        const name = document.getElementsByName("name")[0].value;
+        const email = document.getElementsByName("email")[0].value;
+        const subject = document.getElementsByName("subject")[0].value;
+        const age = document.getElementsByName("age")[0].value;
+        const gender = document.querySelector('input[name="gender"]:checked').id;
+        const message = document.getElementById("message").value;
+        const mailtoLink = `mailto:christen.shubaly@gmail.com?subject=${subject}&body=Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AAge: ${age}%0AGender: ${gender}%0AMessage: ${message}`;
+        window.location.href = mailtoLink;
+    }
+
         
    </script>
 </body>

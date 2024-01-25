@@ -1,0 +1,56 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+        <meta charset='UTF-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name='author' content='Christen Shubaly'>
+        <meta name='email' content='christen.shubaly@protonmail.com'>
+        <meta name='date' content='2023-08-31'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/meyer-reset.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/font.css' %}">
+        
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/checkout.css' %}">
+        
+        
+        <script src="https://js.stripe.com/v3/" defer></script>
+        <script src="https://checkout.stripe.com/checkout.js" defer></script>
+        <script type="text/javascript" src="{% static 'js/rendercart.js' %}" defer></script>
+        <link rel="shortcut icon" href="{% static 'img/logo-small.png' %}" type="image/x-icon">
+        
+        <title>LYSBL</title>
+</head>
+<body>
+    <header>
+        <h1>Cart</h1>
+    </header>
+    <main>
+        <div id="cart-content"></div>
+        <button id="empty-cart">Empty Cart</button>
+    </main>
+    {% comment %} action="/create-checkout/" {% endcomment %}
+    <form action="/create-checkout/" method="POST" id="payment-form">
+        {% csrf_token %}
+        <div id="payment-element">
+          <!--Stripe.js injects the Payment Element-->
+        </div>
+        <button id="submit" type="button">
+          <div class="spinner hidden" id="spinner"></div>
+          <span id="button-text">Pay now</span>
+        </button>
+        <div id="payment-message" class="hidden"></div>
+    </form>
+    
+    <div class="top">
+        <p><a href="{% url 'return_to_store' %}">🏪</a></p>
+    </div>
+</body>

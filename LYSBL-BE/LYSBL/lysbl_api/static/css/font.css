@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed&display=swap');
+
+
+/* headline */
+@font-face {
+    font-family: 'tangerine';
+    src: local('tangerine'), url('/fonts/tangerine/Tangerine.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'calligraffitti';
+    src: local('calligraffitti'), url('/fonts/calligraffitti/Calligraffitti-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'mechanihan';
+    src: local('calligraffitti'), url('/fonts/mechanihan/MechanihanRibbon.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DSGabriele';
+    src: local('DSGabriele'), url('/fonts/ds-gabriele/DSGabriele.woff2'), format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'Poiret One', cursive;
+    font-size: 55pt;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Poiret One', cursive;
+    font-size: 34pt;
+    font-weight: bold;
+}
+
+p, p a, li{
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    font-size: 23pt;
+    line-height: 34pt;
+    font-weight: 100;
+}
+
+/* numbers/bold */
+b {
+    font-family: 'Satisfy', cursive;
+    padding: 0.3em;
+}
+
+/* nav links */
+.nav-links li a {
+    font-family: 'Poiret One', cursive;
+    color: #fff;
+    font-size: 27pt;
+}
+
+#gc-type label{
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+}
+
+button#cardSub {
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    font-size: 17pt;
+}
+
+/* foot link */
+.local a{
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    color: #fff;
+    font-size: 23pt;
+    margin-right: 1em;
+}
+
+.contact-form div fieldset label {
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    font-size: 23pt;
+}
+
+ .contact-form div fieldset input, .contact-form div fieldset textarea {
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    font-size: 18pt;
+}
+
+
+
+.contact-form button {
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    font-size: 18pt;
+  }
+
+
+address {
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    font-size: 23pt;
+}

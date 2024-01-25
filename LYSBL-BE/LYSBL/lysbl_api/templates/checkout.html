@@ -1,0 +1,41 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+        <meta charset='UTF-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name='author' content='Christen Shubaly'>
+        <meta name='email' content='christen.shubaly@protonmail.com'>
+        <meta name='date' content='2023-08-31'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/meyer-reset.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/font.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        <script type="text/javascript" src="{% static 'js/rendercart.js' %}" defer></script>
+        <link rel="shortcut icon" href="{% static 'img/logo-small.png' %}" type="image/x-icon">
+        <title>LYSBL</title>
+
+        <style>
+            
+        </style>
+</head>
+<body>
+    <header>
+        <h1>Cart</h1>
+    </header>
+    <main>
+        <div id="cart-content"></div>
+        <button id="empty-cart">Empty Cart</button>
+    </main>
+    
+    <div class="top">
+        <p><a href="{% url 'return_to_store' %}">🏪</a></p>
+    </div>
+</body>

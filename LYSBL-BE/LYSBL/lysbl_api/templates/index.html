@@ -1,0 +1,347 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+        <meta charset='UTF-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name='author' content='Christen Shubaly'>
+        <meta name='email' content='christen.shubaly@protonmail.com'>
+        <meta name='date' content='2023-08-31'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/meyer-reset.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/font.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        <script type="text/javascript" src="{% static 'js/navsticky.js' %}" defer></script> 
+        <script type="text/javascript" src="{% static 'js/carousel.js' %}" defer></script> 
+        <script type="text/javascript" src="{% static 'js/giftcards.js' %}" defer></script> 
+        <script type="text/javascript" src="{% static 'js/cart.js' %}" defer></script>
+        
+        <link rel="shortcut icon" href="{% static 'img/logo-small.png' %}" type="image/x-icon">
+        <title>LYSBL</title>
+</head>
+<body>
+    <header id="top">
+        <div id="logo-text">
+            <img class="logo" src="{% static 'img/lys_logo.jpg' %}" alt="LYSBL Logo"> 
+        </div>
+    </header>
+
+    <div class="nav" id="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-btn" id="navBtn">
+            <label for="nav-check">
+                <span>☰</span>
+            </label>
+        </div>
+        <div class="nav-links">
+            <li><a href='#home'>Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gift_cards">Gift Cards</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+
+        </div>
+    </div>
+
+
+    <aside aria-label="Love Your Self Beauty Lounge Images" id="home">
+        <div class="carousel" data-carousel>
+            <button class="carousel-button prev" data-carousel-button="prev">&#x219e;</button>
+            <button class="carousel-button next" data-carousel-button="next">&#x21a0;</button>
+            <ul data-slides>
+                <li class="slide" data-active>
+                    <img src="{% static 'img/enhancement/white-table-and-chairs.jpg' %}" alt="White Table And Chairs" > 
+                </li>
+                <li class="slide">
+                    <img src="{% static 'img/enhancement/chairs.jpg' %}" alt="White Table And Chairs"> 
+                </li>
+                <li class="slide">
+                    <img src="{% static 'img/enhancement/bench.jpg' %} " alt="White Table And Chairs"> 
+                </li>
+                <li class="slide">
+                    <img src="{% static 'img/enhancement/lounge.jpg' %} " alt="White Table And Chairs"> 
+                </li>
+                <li class="slide">
+                    <img src="{% static 'img/enhancement/nail-polish.jpg' %} " alt="White Table And Chairs"> 
+                </li>
+            </ul>
+        </div>
+    </aside>
+    
+    <main>
+        <section aria-details="About information"  class="home">
+            <p>Love Your Skin Beauty Lounge is a modern full service spa located in the heart of Ottawa. Our team provides a professional touch to every service we offer and it is our goal to make sure you have the best possible service during your visit with us.</p><br>
+
+            <p>Come for a visit, we guarantee you will Love Your Skin when you do.</p><br>
+
+            <p>See you soon.</p><br>
+        </section>
+        <section aria-details="Services" class="services" id="services">
+            
+            <article aria-details="Laser hair removal">
+                <h1>Laser Hair Removal</h1>
+                <p>We offers the state of the art LightSheer Duet Laser. This is the most advance laser on the market today, which allows you to have hair removed in a safe, fast and virtually painless way. The LightSheer Duet is the laser industry’s gold standard in ultra fast, safe and comfortable hair removal. Our new high speed LightSheer Duet with its dramatically increased spot size and combined with an innovative vacuum assist technology enables you to have larger hair removal areas treated in less time.</p><br>
+
+                <p>For Laser Hair Removal Pricing and Packages: Call <a class="tel" href="tel:6135650111">613.565.0111</a> for your Free Laser Hair Removal Consultation</p>
+            </article>
+            
+            <article aria-details="skincare">
+                <h1>Skincare</h1>
+                <div class="skincare-items" id="skincare_items">
+                    {% for service in skincare_model %}
+                        <div class="item">
+                            <h2>{{ service.name }}<b>{{ service.price }}</b></h2>
+                            <p>{{ service.details }}</p>
+                        </div>
+                        {% if service.name == 'Just In Time Facial' %}
+                            <p class="addon">ADD EYE TREATMENT WITH FACIAL <b>40</b></p>
+                        {% endif %}
+
+                    {% endfor %}
+                </div>
+
+            </article>
+            <article aria-details="Nails">
+                <h1>Nails</h1>
+                <div class="nail-items" id="nail_items">
+                    
+                    {% for service in nails_model %}
+                       
+                        <div class="item">
+                            <h2>{{ service.name }}<b>{% if service.name != 'Bio Sculpture Gel Nails' %}{{ service.price }}{% endif %}</b></h2>
+                            <p>{{ service.details }}</p>
+                            {% if service.name == 'Shellac Manicure' %}
+                                <p class="addon">Shellac Add On <b>15</b></p><br>
+                                <p class="addon">Shellac French Add On <b>18</b></p><br>
+                                <p class="addon">Shellac Removal <b>10</b></p><br>
+                                <p class="addon">Shellac Removal Done By Us Complimentary</p>
+                            {% endif %}
+                            {% if service.name == 'Bio Sculpture Gel Nails' %}
+                                <p class="addon">Bio Sculptures gel Overlay <b>65</b></p><br>
+                                <p class="addon">Bio Sculpture gel extension <b>85</b></p><br>
+                                <p class="addon">Bio Sculpture fill <b>55</b></p><br>
+                            {% endif %}
+                        </div>
+                       
+                    {% endfor %}
+                </div>
+            </article>
+
+            <article aria-details="Lashes">
+                <h1>Lashes</h1>
+                <div class="lash-items" id="lash_items">
+                    {% for service in lashes_model %}
+                       
+                        <div class="item">
+                            <h2>{{ service.name }}<b>{% if service.name != 'Eyelashes Extension' %}{{ service.price }}{% endif %}</b></h2>
+                            <p>{{ service.details }}</p>
+                            {% if service.name == 'Eyelashes Extension' %}
+                                <p class="addon">Full Set <b>140</b></p><br>
+                                <p class="addon">Fill <b>65</b></p><br>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </article>
+
+            <article aria-details="Brows">
+                <h1>Brows</h1>
+                <div class="brow-items" id="brow_items">
+                    {% for service in brows_model %}
+                        <div class="item">
+                            <h2>{{ service.name }}<b>{{ service.price }}</b></h2>
+                            <p>{{ service.details }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </article>
+
+            <article aria-details="Wax">
+                <h1>Wax</h1>
+                <div class="wax-items" id="wax_item">
+                    {% for service in wax_model %}
+                        <div class="item">
+                            <h2>{{ service.name }}<b>{{ service.price }}</b></h2>
+                            <p>{{ service.details }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </article>
+
+            <article aria-details="Makeup">
+                <h1>Make-Up</h1>
+                <div class="makeup-items" id="makeup_items">
+                    {% for service in make_up_model %}
+                        <div class="item">
+                            <h2>{{ service.name }}<b>{{ service.price }}</b></h2>
+                        </div>
+                    {% endfor %}
+                </div>
+            </article>
+
+            <article aria-details="spray tan">
+                <h1>Spray Tans</h1>
+                <div class="spraytan-items" id="spraytan_items">
+                    <div class="item">
+                        {% for service in spray_tans_model %}
+                            <div class="item">
+                                <h2>{{ service.name }}<b>{{ service.price }}</b></h2>
+                                <p>{{ service.details }}</p>
+                                {% if service.name == 'Spray Tan' %}
+                                    <p class="details">Formulated with skin-loving ingredients, that will offer you a natural-looking complexion while leaving your skin hydrated, radiant, and bronzed</p>
+                                    <ul class="details" id="details">
+                                        <li class="detail">NATURAL INGREDIENTS</li>
+                                        <li class="detail">VEGAN & CRUELTY-FREE</li>
+                                        <li class="detail">PARABEN-FREE</li>
+                                        <li class="detail">GLUTEN-FREE</li>
+                                        <li class="detail">SULFATE-FREE</li>
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        </section>
+        <section aria-details="Gift Cards" id="gift_cards" class="gift-cards">
+            <!-- forms in carousel -->
+            <div class="gift-forms-container" id="gift_forms_container">
+                <h1>Gift Cards</h1>
+                <form method="post" id="giftcardsForm">
+                    <div id="gc-type">
+                        <input type="radio" name="gc-type" id="cash" checked>
+                        <label for="cash">Cash</label>
+                    
+                        <input type="radio" name="gc-type" id="voucher">
+                        <label for="voucher">Voucher</label>
+                    </div>
+                    <div class="gc-cash-container">
+                        <select name="gc-cash" id="gc_cash" class="gc-cash">
+                            {% for value in price_range %}
+                                <option value="{{ value }}"><b>${{ value }}</b></option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="gc-services-container">
+                        <select name="gc-services" id="gc_services" class="gc-services">
+                            {% for service in giftcards_model %}
+                                <option value="{{ service.value }}" data-price="{{ service.price }}">{{ service.name }} - ${{ service.price }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="button" id="addToCart">Add to Cart</button>
+                </form>
+            </div>
+        </section>        
+    </main>
+    <footer id="contact" aria-details="contact information">
+        <iframe class="map" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJaWqUIaMFzkwR7Pg7SETw6o4&key=AIzaSyAy3eQfAo_yO5jsSUkz3zd43fAEbVPpTmg"></iframe>
+       
+
+        <div class="info">
+            <div class="hours" id="hours">
+                <h2>Hours</h2>
+                <ul>
+                    <li>Sunday closed</li>
+                    <li>Monday closed</li>
+                    <li>Tuesday 9-6</li>
+                    <li>Wednesday 9-6</li>
+                    <li>Thursday 10-7</li>
+                    <li>Friday 10-7</li>
+                    <li>Saturday 9-5</li>
+                </ul>
+            </div>
+        </div>
+
+        <form action="" class="contact-form" id="contactForm">
+            <h2>Contact Us</h2>
+            <div>
+                <fieldset>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" placeholder="John Doe">
+                </fieldset>
+
+                <fieldset>
+                    <label for="name">email</label>
+                    <input type="email" name="email" placeholder="johnjoe@gmail.com">
+                </fieldset>
+
+                <fieldset>
+                    <label for="subject">Subject</label>
+                    <input type="text" name="subject" placeholder="Email subject line">
+                </fieldset>
+
+                <fieldset>
+                    <label for="age">Age</label>
+                    <input type="number" name="age" value="18">
+                </fieldset>
+
+                <fieldset>
+                    <label for="gender">Sex</label>
+                    <div class="sex">
+                        <div>
+                            <label for="cash">Male</label>
+                            <input type="radio" name="gender" id="male" checked>
+                        </div>
+                        <div>
+                            <label for="voucher">Female</label>
+                            <input type="radio" name="gender" id="fem">
+                        </div>
+                    </div>
+                    
+                </fieldset>
+
+                <fieldset>
+                    <label for="message">Message</label>
+                    <textarea name="message" id="" cols="30" rows="5"></textarea>
+                </fieldset>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+
+        <div class="local">
+            <p>
+                Conveniently located in East Ottawa.
+            </p>
+            
+            <address>
+                97 Main St. Ottawa Ontario K1S 1B7
+            </address>
+
+            <div>
+                <a href="tel:6135650111">613-565-0111</a>
+                <a href="mailto:info@lysbl.ca">info@lysbl.ca</a>
+            </div>
+            
+            
+
+            <a href="https://www.facebook.com/lysbeautylounge/?fref=ts"><img class="soci" src="{% static 'img/facebook.svg' %}" alt="facebook icon"></a>
+            <a href="https://www.instagram.com/loveyourskin_beautylounge/"><img class="soci" src="{% static 'img/instagram.svg' %}" alt="instagram"></a>
+
+            
+            <p>© 2023 Love Your Skin Beauty Lounge</p>
+        </div>
+    
+
+        
+        
+        
+        
+    </footer>
+
+    <div class="top">
+        <h2><a href="{% url 'redirect_to_cart' %}">🛒</a></h2>
+    </div>
+        
+
+    
+</body>
+</html>

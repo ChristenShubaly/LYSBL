@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="{% static 'img/logo-small.png' %}" type="image/x-icon">
+    <title>Stripe Checkout Test</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var stripe = Stripe('pk_test_51L8denBtDnDsDtOMCyguRiCrsCHifSwqzNrC0PNsSS303cQRPfGsBaPIqSmqkfgGIwyFDLMoguxKZDPPcaZDngQ7005FQgKh9Y'); // Replace with your Stripe publishable key
+
+            document.getElementById('checkout-button').addEventListener('click', function() {
+                fetch('/create-test-checkout-session/')
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(session) {
+                        return stripe.redirectToCheckout({ sessionId: session.sessionId });
+                    })
+                    .then(function(result) {
+                        if (result.error) {
+                            alert(result.error.message);
+                        }
+                    })
+                    .catch(function(error) {
+                        console.error('Error:', error);
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="checkout-button">Test Checkout</button>
+</body>
+</html>

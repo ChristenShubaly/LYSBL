@@ -1,0 +1,20 @@
+main {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 6em;
+}
+
+main > * {
+    padding: 2rem;
+}
+
+#success {
+    color: rgb(24, 158, 51);
+}
+#cancel {
+    color: rgb(224, 61, 11);
+}
